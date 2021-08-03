@@ -27,10 +27,11 @@ while($row = mysqli_fetch_assoc($res))
 <script type="text/javascript" src="scripts.js"></script>
 
 <style type="text/css">
-  .main { position: absolute; width: 1420px; height: 689px; left: 250px; top: 123px; background: #F2F2F2; }
+  .main { text-align: center; width: 1420px; height: 689px; left: 250px; top: 123px; background: #F2F2F2; }
   .product { text-align: center; }
-  .product1 { text-align: center; padding: 0 10% 0 10%; background: #F2F2F2; }
-  .button { text-align: center; }
+  .button { text-align: center; width: 460px; height: 60px; left: 730px; top: 853px; background: #FFBC7D; border-radius: 25px; }
+  .text_buttom { text-align: center;  font-family: Roboto; font-style: normal; font-weight: 500; font-size: 24px; line-height: 28px; color: #FFFFFF;}
+
   .heder { background-color: #4E5D66; height: 90px; width: 100%; }
 
 
@@ -43,11 +44,33 @@ while($row = mysqli_fetch_assoc($res))
 
 li {
   display: table-cell;
-  width: 33.33%;
+  width: 33.3%;
+
+width: 460px;
+height: 65px;
+left: 250px;
+top: 206px;
+
+background: #FFFFFF;
+
+
+width: 69px;
+height: 28px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 28px;
+text-align: center;
+
+color: #000000;
 }
 
 
-.logo { position: absolute;
+ 
+.logo {
+  padding: 1% 2% 2% 2%;
 width: 93px;
 height: 42px;
 left: 92px;
@@ -73,10 +96,11 @@ color: #FF7A00; }
 
 <div class="heder">
   <div class="logo">LOGO</div>
-  <div class="svg1" ></div>
 
 </div>
 
+
+<div class="main_body">
 <div class="main" id="store">
 
 
@@ -86,8 +110,7 @@ color: #FF7A00; }
   <li><div class="product">Cтатус продукта</div></li>
   <li><div class="product">Общее количество</div></li>
 </ul>
-<div>
-
+<div class="product">
    
     <?php foreach ($store as $arr): ?>
      <ul><li><div class="product"><?php echo htmlspecialchars($arr['store_id']); ?></div></li>
@@ -96,9 +119,8 @@ color: #FF7A00; }
        
     <?php endforeach; ?>
 
-
 </div>
-</div>
+</div></div>
 <script>
 var i = 10;
 
@@ -116,7 +138,7 @@ setTimeout(function(){
 
 
 </script>
-<button class="button" id="more" onclick="rel()">Обновить список</button>
+<button class="button" id="more" onclick="rel()"><div class="text_buttom">Обновить список</div></button>
 
 
 
