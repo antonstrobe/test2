@@ -30,6 +30,23 @@ while($row = mysqli_fetch_assoc($res))
   .main { width: 100%; text-align: center;  }
   .product { text-align: center; }
   .button { text-align: center; }
+
+
+  ul {
+  list-style-type: none;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+li {
+  display: table-cell;
+  width: 33.3%;
+}
+
+
+
+
 </style>
 
 </head>
@@ -37,14 +54,27 @@ while($row = mysqli_fetch_assoc($res))
 
 
 
+
+
+
 <div class="main" id="store">
+
+
+
+  <ul>
+  <li><div class="product">ID Продукта</div></li>
+  <li><div class="product">Cтатус продукта</div></li>
+  <li><div class="product">Общее количество</div></li>
+</ul>
 <div class="product">
+   
     <?php foreach ($store as $arr): ?>
-     <br><?php echo htmlspecialchars($arr['store_id']); ?>
-       <?php echo htmlspecialchars($arr['type']); ?>
-        <?php echo htmlspecialchars($arr['product']); ?>
+     <ul><li><div class="product"><?php echo htmlspecialchars($arr['store_id']); ?></div></li>
+     <li><div class="product"><?php echo htmlspecialchars($arr['type']); ?></div></li>
+     <li><div class="product"><?php echo htmlspecialchars($arr['product']); ?></div></li></ul>
        
     <?php endforeach; ?>
+
 </div>
 </div>
 <script>
@@ -55,7 +85,7 @@ function rel() {
     if (i==80) {
   //document.getElementById("store").outerHTML='<?php echo htmlspecialchars($arr['product']); ?>';
   //$("#reload").load(location.href + " #reload");
-  document.getElementById("store").outerHTML='';
+  //document.getElementById("store").outerHTML='';
 setTimeout(function(){
   location.reload();
 }, 100);

@@ -15,7 +15,7 @@ var startFrom = 10;
             if (data.length > 0) {
             $.each(data, function(index, data){
             var set = 10;
-            $("#store").append(" " + data.store_id + " " + data.type + " " + data.product + "<br>");
+            $("#store").append('<ul><li><div class="product">' + data.store_id + '</div></li><li><div class="product">' + data.type + '</div></li><li><div class="product">' + data.product + '</div></li></ul>');
             });
             inProgress = false;
             startFrom += 10;
