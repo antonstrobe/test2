@@ -27,9 +27,11 @@ while($row = mysqli_fetch_assoc($res))
 <script type="text/javascript" src="scripts.js"></script>
 
 <style type="text/css">
-  .main { width: 100%; text-align: center;  }
+  .main { position: absolute; width: 1420px; height: 689px; left: 250px; top: 123px; background: #F2F2F2; }
   .product { text-align: center; }
+  .product1 { text-align: center; padding: 0 10% 0 10%; background: #F2F2F2; }
   .button { text-align: center; }
+  .heder { background-color: #4E5D66; height: 90px; width: 100%; }
 
 
   ul {
@@ -41,9 +43,23 @@ while($row = mysqli_fetch_assoc($res))
 
 li {
   display: table-cell;
-  width: 33.3%;
+  width: 33.33%;
 }
 
+
+.logo { position: absolute;
+width: 93px;
+height: 42px;
+left: 92px;
+top: 24px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 900;
+font-size: 36px;
+line-height: 42px;
+
+color: #FF7A00; }
 
 
 
@@ -55,7 +71,11 @@ li {
 
 
 
+<div class="heder">
+  <div class="logo">LOGO</div>
+  <div class="svg1" ></div>
 
+</div>
 
 <div class="main" id="store">
 
@@ -66,7 +86,8 @@ li {
   <li><div class="product">Cтатус продукта</div></li>
   <li><div class="product">Общее количество</div></li>
 </ul>
-<div class="product">
+<div>
+
    
     <?php foreach ($store as $arr): ?>
      <ul><li><div class="product"><?php echo htmlspecialchars($arr['store_id']); ?></div></li>
@@ -74,6 +95,7 @@ li {
      <li><div class="product"><?php echo htmlspecialchars($arr['product']); ?></div></li></ul>
        
     <?php endforeach; ?>
+
 
 </div>
 </div>
