@@ -27,50 +27,51 @@ while($row = mysqli_fetch_assoc($res))
 <script type="text/javascript" src="scripts.js"></script>
 
 <style type="text/css">
-  .main { text-align: center; width: 1420px; height: 689px; left: 250px; top: 123px; background: #F2F2F2; }
-  .product { text-align: center; }
-  .button { text-align: center; width: 460px; height: 60px; left: 730px; top: 853px; background: #FFBC7D; border-radius: 25px; }
-  .text_buttom { text-align: center;  font-family: Roboto; font-style: normal; font-weight: 500; font-size: 24px; line-height: 28px; color: #FFFFFF;}
 
-  .heder { background-color: #4E5D66; height: 90px; width: 100%; }
+
+body {
+  margin: 0;
+  text-align: center;
+}
+  .header { 
+
+  text-align: center;
+  top: 0;
+  width: 100%;
+    background-color: #4E5D66; height: 90px; }
+  .header_product_ul {background: #F2F2F2;}
+  .header_product_li {background: #FFBC7D; padding: 3%; color: #fff; }
+  .main_body { text-align: center; width: 1420px; height: 689px; left: 250px; top: 123px; padding: 0 13% 0 13%; }
+  .main { text-align: center; background: #F2F2F2;  }
+  .product { text-align: center; }
+  .button { text-align: center; color: #fff;
+
+width: 460px;
+height: 60px;
+left: 730px;
+top: 853px;
+
+background: #FFBC7D;
+border-radius: 25px; }
+
 
 
   ul {
   list-style-type: none;
-  width: 100%;
+  width: 94.5%;
   display: table;
   table-layout: fixed;
 }
 
 li {
   display: table-cell;
-  width: 33.3%;
 
-width: 460px;
-height: 65px;
-left: 250px;
-top: 206px;
-
-background: #FFFFFF;
-
-
-width: 69px;
-height: 28px;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: 500;
-font-size: 24px;
-line-height: 28px;
-text-align: center;
-
-color: #000000;
 }
 
 
  
 .logo {
-  padding: 1% 2% 2% 2%;
+padding: 1.2%;
 width: 93px;
 height: 42px;
 left: 92px;
@@ -85,6 +86,23 @@ line-height: 42px;
 color: #FF7A00; }
 
 
+@media (max-width: 1067px) {
+
+ul {
+
+    width: 91.5%;
+    display: table;
+    table-layout: fixed;
+    
+}
+
+.header_product_ul {font-size: 190%;}
+.product {font-size: 190%;}
+.button { font-size: 212%; }
+
+}
+
+
 
 </style>
 
@@ -94,23 +112,25 @@ color: #FF7A00; }
 
 
 
-<div class="heder">
+
+
+
+<!-- <div class="main_body">
+  <div class="header">
   <div class="logo">LOGO</div>
 
-</div>
+</div> -->
 
-
-<div class="main_body">
 <div class="main" id="store">
 
 
 
-  <ul>
-  <li><div class="product">ID Продукта</div></li>
-  <li><div class="product">Cтатус продукта</div></li>
-  <li><div class="product">Общее количество</div></li>
+  <ul class="header_product_ul">
+  <li><div class="header_product_li" >ID Продукта</div></li>
+  <li><div class="header_product_li" >Cтатус продукта</div></li>
+  <li><div class="header_product_li" >Общее количество</div></li>
 </ul>
-<div class="product">
+
    
     <?php foreach ($store as $arr): ?>
      <ul><li><div class="product"><?php echo htmlspecialchars($arr['store_id']); ?></div></li>
@@ -119,8 +139,8 @@ color: #FF7A00; }
        
     <?php endforeach; ?>
 
-</div>
-</div></div>
+
+</div><button class="button" id="more" onclick="rel()">Обновить список</button></div>
 <script>
 var i = 10;
 
@@ -138,7 +158,7 @@ setTimeout(function(){
 
 
 </script>
-<button class="button" id="more" onclick="rel()"><div class="text_buttom">Обновить список</div></button>
+
 
 
 
