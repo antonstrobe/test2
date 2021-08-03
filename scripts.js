@@ -15,7 +15,7 @@ var startFrom = 10;
             if (data.length > 0) {
             $.each(data, function(index, data){
             var set = 10;
-            $("#store").append(" " + data.store_id + " " + data.type + " " + data.product + " ");
+            $("#store").append(" " + data.store_id + " " + data.type + " " + data.product + "<br>");
             });
             inProgress = false;
             startFrom += 10;
@@ -23,3 +23,4 @@ var startFrom = 10;
         }
     });
 });
+

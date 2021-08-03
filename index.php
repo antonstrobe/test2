@@ -26,21 +26,27 @@ while($row = mysqli_fetch_assoc($res))
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="scripts.js"></script>
 
+<style type="text/css">
+  .main { width: 100%; text-align: center;  }
+  .product { text-align: center; }
+  .button { text-align: center; }
+</style>
+
 </head>
 <body>
 
 
-<div id="reload">
-<div style="width: 200px;" id="store">
 
+<div class="main" id="store">
+<div class="product">
     <?php foreach ($store as $arr): ?>
      <br><?php echo htmlspecialchars($arr['store_id']); ?>
        <?php echo htmlspecialchars($arr['type']); ?>
         <?php echo htmlspecialchars($arr['product']); ?>
        
     <?php endforeach; ?>
-
-</div></div>
+</div>
+</div>
 <script>
 var i = 10;
 
@@ -49,7 +55,7 @@ function rel() {
     if (i==80) {
   //document.getElementById("store").outerHTML='<?php echo htmlspecialchars($arr['product']); ?>';
   //$("#reload").load(location.href + " #reload");
-  //document.getElementById("store").outerHTML='';
+  document.getElementById("store").outerHTML='';
 setTimeout(function(){
   location.reload();
 }, 100);
@@ -58,7 +64,7 @@ setTimeout(function(){
 
 
 </script>
-<button id="more" onclick="rel()">Обновить список</button>
+<button class="button" id="more" onclick="rel()">Обновить список</button>
 
 
 
